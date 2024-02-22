@@ -16,14 +16,28 @@ public class Main {
     public static void runTest(String testName, String[] testStrings) {
         System.out.println("\n ***** " + testName + " *****");
         System.out.println("String 1: " + testStrings[0]);
-        System.out.println(
-                "String 2: " + testStrings[1]);
-        String tab_result = tabulation.tabulationSolution(testStrings[0], testStrings[1]);
-        System.out.println("Tabulation Solution - Longest Common Subsequence: " + tab_result + " - Length: " +
-                tab_result.length());
-        String memo_result = memoization.memoizationSolution(testStrings[0], testStrings[1]);
-        System.out.println("Memoization Solution - Longest Common Subsequence: " + memo_result + " - Length: "
-                + memo_result.length());
-    }
+        System.out.println("String 2: " + testStrings[1]);
 
+        Runtime runtime = Runtime.getRuntime();
+
+        long startTime = System.nanoTime();
+        long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
+        String tabResult = tabulation.tabulationSolution(testStrings[0], testStrings[1]);
+        long usedMemoryAfter = runtime.totalMemory() - runtime.freeMemory();
+        long endTime = System.nanoTime();
+        System.out.println(
+                "Tabulation Solution - Longest Common Subsequence: " + tabResult + " - Length: " + tabResult.length());
+        System.out.println("Tabulation Solution - Time taken: " + (endTime - startTime) + " nanoseconds");
+        System.out.println("Tabulation Solution - Memory used: " + (usedMemoryAfter - usedMemoryBefore) + " bytes");
+
+        startTime = System.nanoTime();
+        usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
+        String memoResult = memoization.memoizationSolution(testStrings[0], testStrings[1]);
+        usedMemoryAfter = runtime.totalMemory() - runtime.freeMemory();
+        endTime = System.nanoTime();
+        System.out.println("Memoization Solution - Longest Common Subsequence: " + memoResult + " - Length: "
+                + memoResult.length());
+        System.out.println("Memoization Solution - Time taken: " + (endTime - startTime) + " nanoseconds");
+        System.out.println("Memoization Solution - Memory used: " + (usedMemoryAfter - usedMemoryBefore) + " bytes");
+    }
 }
