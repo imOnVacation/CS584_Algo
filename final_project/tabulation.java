@@ -1,7 +1,7 @@
 package final_project;
 
 public class tabulation {
-    public int longestCommonSubsequence(String str1, String str2) {
+    public static String tabulationSolution(String str1, String str2) {
         int m = str1.length();
         int n = str2.length();
         int[][] dp = new int[m + 1][n + 1];
@@ -13,6 +13,21 @@ public class tabulation {
                 else
                     dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
 
-        return dp[m][n];
+        // return dp[m][n];
+        // Build the LCS string from the dp table
+        StringBuilder lcs = new StringBuilder();
+        int i = m, j = n;
+        while (i > 0 && j > 0) {
+            if (str1.charAt(i - 1) == str2.charAt(j - 1)) {
+                lcs.append(str1.charAt(i - 1));
+                i--;
+                j--;
+            } else if (dp[i - 1][j] > dp[i][j - 1]) {
+                i--;
+            } else {
+                j--;
+            }
+        }
+        return lcs.reverse().toString();
     }
 }
