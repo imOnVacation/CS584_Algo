@@ -1,5 +1,7 @@
 package final_project;
 
+import java.util.function.Supplier;
+
 public class Main {
     public static void main(String[] args) {
         runTest("Test 1 - Two Strings of equal length", generateSequences.generateEqualLengthStrings());
@@ -18,26 +20,21 @@ public class Main {
         System.out.println("String 1: " + testStrings[0]);
         System.out.println("String 2: " + testStrings[1]);
 
+        measureAlgorithm("Tabulation", () -> tabulation.tabulationSolution(testStrings[0], testStrings[1]));
+        measureAlgorithm("Memoization", () -> memoization.memoizationSolution(testStrings[0], testStrings[1]));
+    }
+
+    public static void measureAlgorithm(String algorithmName, Supplier<String> algorithmSupplier) {
         Runtime runtime = Runtime.getRuntime();
-
+        System.gc(); // Run garbage collector to clean up memory
+        long startMemory = runtime.totalMemory() - runtime.freeMemory();
         long startTime = System.nanoTime();
-        long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
-        String tabResult = tabulation.tabulationSolution(testStrings[0], testStrings[1]);
-        long usedMemoryAfter = runtime.totalMemory() - runtime.freeMemory();
+        String result = algorithmSupplier.get();
         long endTime = System.nanoTime();
+        long endMemory = runtime.totalMemory() - runtime.freeMemory();
         System.out.println(
-                "Tabulation Solution - Longest Common Subsequence: " + tabResult + " - Length: " + tabResult.length());
-        System.out.println("Tabulation Solution - Time taken: " + (endTime - startTime) + " nanoseconds");
-        System.out.println("Tabulation Solution - Memory used: " + (usedMemoryAfter - usedMemoryBefore) + " bytes");
-
-        startTime = System.nanoTime();
-        usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
-        String memoResult = memoization.memoizationSolution(testStrings[0], testStrings[1]);
-        usedMemoryAfter = runtime.totalMemory() - runtime.freeMemory();
-        endTime = System.nanoTime();
-        System.out.println("Memoization Solution - Longest Common Subsequence: " + memoResult + " - Length: "
-                + memoResult.length());
-        System.out.println("Memoization Solution - Time taken: " + (endTime - startTime) + " nanoseconds");
-        System.out.println("Memoization Solution - Memory used: " + (usedMemoryAfter - usedMemoryBefore) + " bytes");
+                algorithmName + " Solution - Longest Common Subsequence: " + result + " - Length: " + result.length());
+        System.out.println(algorithmName + " Solution - Time taken: " + (endTime - startTime) + " nanoseconds");
+        System.out.println(algorithmName + " Solution - Memory used: " + (endMemory - startMemory) + " bytes");
     }
 }
