@@ -4,17 +4,6 @@ import java.util.Random;
 
 public class generateSequences {
 
-    public static void main(String[] args) {
-        generateEqualLengthStrings();
-        generateCompletelyDifferentStrings();
-        generateOneStringContainsOther();
-        generateOneEmptyString();
-        generateRepeatedCharacters();
-        generateLongStrings();
-        generateSpecialCharacters();
-        generateEdgeCases();
-    }
-
     // Randomly generate String function
     public static String randomGenerateString(int length) {
         StringBuilder sb = new StringBuilder();
