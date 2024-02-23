@@ -1,0 +1,17 @@
+Test Name,Algorithm,Time (nanoseconds),Memory Used (bytes)
+Test 1,Tabulation,3844500,252912
+Test 1,Memoization,399042,30800
+Test 2,Tabulation,33666,20224
+Test 2,Memoization,49667,13264
+Test 3,Tabulation,30958,8632
+Test 3,Memoization,22250,5640
+Test 4,Tabulation,3041,3664
+Test 4,Memoization,6459,3096
+Test 5,Tabulation,39667,3120
+Test 5,Memoization,28417,3120
+Test 6,Tabulation,39319667,11533856
+Test 6,Memoization,35126125,11585376
+Test 7,Tabulation,20125,33424
+Test 7,Memoization,4500,22152
+Test 8,Tabulation,63208,14416
+Test 8,Memoization,3750,9416
