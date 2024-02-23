@@ -47,7 +47,7 @@ public class Main {
         measureAlgorithm("Memoization", () -> memoization.memoizationSolution(testStrings[0], testStrings[1]),
                 testNumber, csvData);
         measureAlgorithm("Tabulation Space Optimization",
-                () -> memoization.memoizationSolution(testStrings[0], testStrings[1]),
+                () -> tabulationSpaceOptimization.tabulationSpaceOptimizationSolution(testStrings[0], testStrings[1]),
                 testNumber, csvData);
     }
 
