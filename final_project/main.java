@@ -59,10 +59,12 @@ public class Main {
         long endMemory = runtime.totalMemory() - runtime.freeMemory();
         System.out.println(
                 algorithmName + " Solution - Longest Common Subsequence: " + result + " - Length: " + result.length());
-        System.out.println(algorithmName + " Solution - Time taken: " + (endTime - startTime) + " nanoseconds");
+        System.out.println(algorithmName + " Solution - Time taken: " + ((double) (endTime - startTime)) / 1_000_000_000
+                + " seconds");
         System.out.println(algorithmName + " Solution - Memory used: " + (endMemory - startMemory) + " bytes");
         // Append data to CSV StringBuilder
-        csvData.append(testName).append(",").append(algorithmName).append(",").append(endTime - startTime).append(",")
+        csvData.append(testName).append(",").append(algorithmName).append(",")
+                .append(((double) (endTime - startTime)) / 1_000_000_000).append(",")
                 .append(endMemory - startMemory).append("\n");
     }
 }
