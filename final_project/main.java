@@ -46,6 +46,9 @@ public class Main {
                 testNumber, csvData);
         measureAlgorithm("Memoization", () -> memoization.memoizationSolution(testStrings[0], testStrings[1]),
                 testNumber, csvData);
+        measureAlgorithm("Tabulation Space Optimization",
+                () -> memoization.memoizationSolution(testStrings[0], testStrings[1]),
+                testNumber, csvData);
     }
 
     public static void measureAlgorithm(String algorithmName, Supplier<String> algorithmSupplier, String testName,
