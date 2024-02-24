@@ -21,7 +21,8 @@ public class Main {
                 runTest("Test 4 - One empty string", generateSequences.generateOneEmptyString(), csvData);
                 runTest("Test 5 - Strings with repeated characters", generateSequences.generateRepeatedCharacters(),
                                 csvData);
-                runTest("Test 6 - Long strings", generateSequences.generateLongStrings(), csvData);
+                runTest("Test 6 - Long strings", generateSequences.generateLongStrings(),
+                                csvData);
                 runTest("Test 7 - Strings containing special characters", generateSequences.generateSpecialCharacters(),
                                 csvData);
                 runTest("Test 8 - Two strings are the same", generateSequences.generateEdgeCases(), csvData);
@@ -67,13 +68,12 @@ public class Main {
                                 algorithmName + " Solution - Longest Common Subsequence: " + result + " - Length: "
                                                 + result.length());
                 System.out.println(algorithmName + " Solution - Time taken: "
-                                + ((double) (endTime - startTime)) / 1_000_000_000
-                                + " seconds");
+                                + ((endTime - startTime)) + " nanoseconds");
                 System.out.println(algorithmName + " Solution - Memory used: " + (endMemory - startMemory) + " bytes");
 
                 // Append algorithm performance details to csvData StringBuilder
                 csvData.append(testName).append(",").append(algorithmName).append(",")
-                                .append(((double) (endTime - startTime)) / 1_000_000_000).append(",")
+                                .append(((endTime - startTime))).append(",")
                                 .append(endMemory - startMemory).append("\n");
         }
 
