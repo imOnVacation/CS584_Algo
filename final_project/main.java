@@ -13,18 +13,18 @@ public class Main {
                 // Run tests and populate csvData StringBuilder
                 runTest("Test 1 - Two Strings of equal length", generateSequences.generateEqualLengthStrings(),
                                 csvData);
-                runTest("Test 2 - two strings with no common characters",
+                runTest("Test 2 - Two strings with no common characters",
                                 generateSequences.generateCompletelyDifferentStrings(), csvData);
-                runTest("Test 3 - one string that contains the other",
+                runTest("Test 3 - One string that contains the other",
                                 generateSequences.generateOneStringContainsOther(),
                                 csvData);
-                runTest("Test 4 - one empty string", generateSequences.generateOneEmptyString(), csvData);
-                runTest("Test 5 - strings with repeated characters", generateSequences.generateRepeatedCharacters(),
+                runTest("Test 4 - One empty string", generateSequences.generateOneEmptyString(), csvData);
+                runTest("Test 5 - Strings with repeated characters", generateSequences.generateRepeatedCharacters(),
                                 csvData);
-                runTest("Test 6 - long strings", generateSequences.generateLongStrings(), csvData);
-                runTest("Test 7 - strings containing special characters", generateSequences.generateSpecialCharacters(),
+                runTest("Test 6 - Long strings", generateSequences.generateLongStrings(), csvData);
+                runTest("Test 7 - Strings containing special characters", generateSequences.generateSpecialCharacters(),
                                 csvData);
-                runTest("Test 8 - edge case: two strings are the same", generateSequences.generateEdgeCases(), csvData);
+                runTest("Test 8 - Two strings are the same", generateSequences.generateEdgeCases(), csvData);
 
                 // Write CSV data to a file
                 writeCSVFile(csvData);
