@@ -1,0 +1,25 @@
+Test Name,Algorithm,Time (nanoseconds),Memory Used (bytes)
+Test 1,Tabulation,6266875,336344
+Test 1,Memoization,2049208,95280
+Test 1,Tabulation Space Optimization,1490542,84080
+Test 2,Tabulation,960917,79624
+Test 2,Memoization,320875,52136
+Test 2,Tabulation Space Optimization,747958,55872
+Test 3,Tabulation,520792,52456
+Test 3,Memoization,146625,51824
+Test 3,Tabulation Space Optimization,453334,58528
+Test 4,Tabulation,7084,3096
+Test 4,Memoization,4625,3096
+Test 4,Tabulation Space Optimization,5875,3496
+Test 5,Tabulation,694708,67264
+Test 5,Memoization,49667,48680
+Test 5,Tabulation Space Optimization,535916,71224
+Test 6,Tabulation,474833,87016
+Test 6,Memoization,1406250,83920
+Test 6,Tabulation Space Optimization,819792,90848
+Test 7,Tabulation,175292,35600
+Test 7,Memoization,105666,35600
+Test 7,Tabulation Space Optimization,430375,33408
+Test 8,Tabulation,299750,129456
+Test 8,Memoization,17542,68800
+Test 8,Tabulation Space Optimization,873792,120688
