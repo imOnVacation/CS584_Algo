@@ -66,7 +66,7 @@ public class generateSequences {
         return new String[] { str1, str2 };
     }
 
-    // Generates edge cases - two strings are the same
+    // Generates two strings are the same
     public static String[] generateEdgeCases() {
         String str1 = "aaaaaaa";
         String str2 = "aaaaaaa";
